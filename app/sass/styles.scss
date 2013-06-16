@@ -1,0 +1,201 @@
+//===============================================================================
+// IMPORTS
+//===============================================================================
+// VARIABLES: define mixins for later use
+@import "_variables";
+
+// MIXINS: define mixins for later use
+@import "_mixins";
+
+// FONTS: @font-face rules 
+@import "_fonts";
+
+// NORMALIZE: normalize.css from ttp://necolas.github.io/normalize.css/
+@import "_normalize.scss";
+
+// THIRD-PARTY: styles for JS libs etc
+
+// ELEMENTS: styles for standard html elements
+@import "_elements";
+
+// HELPERS: helper classes. clear-fix etc 
+@import "_helpers";
+
+// LAYOUT: grids, wraps etc
+@import "_layout";
+
+// TYPOGRAPHY:
+@import "_typography";
+
+// SHARED-STYLES: styles used across multiple pages
+@import "_shared";
+
+// GLOBAL-ELEMENTS: elements that are used on every page. Eg headers & footers
+@import "_header";
+@import "_footer";
+
+// PAGES: styles per page
+
+// BROWSER-FIXES: styles per page
+@import "_browser-fixes";
+
+// MEDIA-QUERIES:
+@import "_media-queries";
+
+//===============================================================================
+// DEV-STYLES
+//===============================================================================
+html,
+body{
+  width: 100%;
+  height: 100%;
+  font-family: 'Vollkorn', serif;
+}
+
+.container{
+  @include vendor-prefix(perspective, 1000);
+
+  width: 100%;
+  height: 100%;
+}
+
+$timer: 8;
+
+// .container:hover {
+
+//   .page{
+//     transition: (10s / $timer);
+//     @include vendor-prefix(transform, rotateY(-90deg));  
+//   }
+// }
+
+.flip{
+  @include vendor-prefix(transition, 1.25s);
+  @include vendor-prefix(transform, rotateY(-90deg));  
+}
+
+
+.page{
+  @include vendor-prefix(transform-style, preserve-3d);
+  @include vendor-prefix(backface-visibility, hidden);
+  @include vendor-prefix(transform-origin, 0 50%);
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+// COVER
+////////////////////////////////////////
+.cover{
+  background: $cover;
+}
+
+.binding{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  background: $binding;
+
+  &:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 7.5%;
+    left: 70%;
+    background: darken($binding, 6);
+  }  
+}
+
+.logo{
+  position: absolute;
+  right: 18%;
+  top: 50%;
+  background: $binding;
+  height: 8em;
+  margin-top: -4em;
+  padding: 2em;
+
+  h1{
+    color: white;
+    font-weight: 400;
+    letter-spacing: 5px;
+    border-top: 4px double white;
+    border-bottom: 4px double white;
+    line-height: 1.6;
+    padding: .2em .6em  0 .8em; 
+  }
+}
+
+
+// page
+////////
+
+.page{
+  background-color: $paper;
+
+  &:nth-child(odd){
+    background-color: darken($paper, 5);    
+  }
+}
+
+.landscape{
+  
+  .image-container{
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    padding: 1em;
+  }
+
+  img{
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+    height: 450px;
+    padding: .5em;
+    background: white;
+  }
+
+  p{
+    background: white;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: (1em/1.5);
+    margin: 0 0 0 -300px;
+    left: 50%;
+    width: 600px;
+    padding: .5em;
+    line-height: 1.2;
+    font-size: 1.5em;
+  }
+}
+
+.portrait{
+
+  .image-container{
+    padding: 2em 1em;
+  }
+
+  img{
+    padding: .5em;
+    background: white;
+    height: 500px;
+    width: 375px;
+  }
+
+  p{
+    background: white;
+    font-family: sans-serif;
+    padding: .5em;
+    line-height: 1.2;
+    font-size: 1.5em;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    margin-top: -50px;
+    width: 330px;
+  }
+}
