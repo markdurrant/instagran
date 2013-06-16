@@ -87,9 +87,17 @@ $timer: 8;
   position: absolute;
 }
 
+.page{
+  background-color: $paper;
+
+  &:nth-child(odd){
+    background-color: darken($paper, 5);    
+  }
+}
+
 // COVER
 ////////////////////////////////////////
-.cover{
+.page.cover{
   background: $cover;
 }
 
@@ -132,14 +140,6 @@ $timer: 8;
 
 // page
 ////////
-
-.page{
-  background-color: $paper;
-
-  &:nth-child(odd){
-    background-color: darken($paper, 5);    
-  }
-}
 
 .landscape{
   

@@ -164,7 +164,7 @@ table {
 
 body {
   background-color: #d1f3ff;
-  color: #366b7e;
+  color: #3b7489;
   font-size: 1.0625em;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.4;
@@ -193,15 +193,15 @@ dd {
   margin-left: 1.4em; }
 
 a {
-  color: #366b7e;
+  color: #3b7489;
   font-weight: bolder; }
   a:hover {
-    color: #274d5b; }
+    color: #2c5666; }
 
 blockquote {
   margin: 0;
   padding: 0 2em;
-  border-left: 0.2em solid #366b7e;
+  border-left: 0.2em solid #3b7489;
   font-style: italic; }
   blockquote p:before {
     margin: 0 0.2em 0 -0.6em;
@@ -215,7 +215,7 @@ pre {
   -webkit-border-radius: 0.2em;
   border-radius: 0.2em;
   padding: .85em 1.05em;
-  background-color: #60a2bb;
+  background-color: #6ba8bf;
   color: #d1f3ff; }
 
 p code,
@@ -231,7 +231,7 @@ p samp {
 hr {
   margin: 2em 0;
   border: 0;
-  border-top: 1px dashed #366b7e; }
+  border-top: 1px dashed #3b7489; }
 
 button, .btn,
 input[type="button"],
@@ -266,7 +266,7 @@ input[type="submit"] {
   clear: both; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #366b7e; }
+  color: #3b7489; }
 
 .tera,
 .giga,
@@ -385,8 +385,13 @@ body {
   height: 100%;
   position: absolute; }
 
-.cover {
-  background: #a7ccd9; }
+.page {
+  background-color: #d1f3ff; }
+  .page:nth-child(odd) {
+    background-color: #b7ecff; }
+
+.page.cover {
+  background: #b2d2de; }
 
 .binding {
   position: absolute;
@@ -417,11 +422,6 @@ body {
     border-bottom: 4px double white;
     line-height: 1.6;
     padding: .2em .6em  0 .8em; }
-
-.page {
-  background-color: #d1f3ff; }
-  .page:nth-child(odd) {
-    background-color: #b7ecff; }
 
 .landscape .image-container {
   position: absolute;
