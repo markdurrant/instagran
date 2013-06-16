@@ -4,7 +4,8 @@
 $cover: #B2D2DE;
 $binding: #8DBCCF;
 
-$paper: darken(#E0F7FF, 3);
+$paper: hsl(185, 100, 92);
+$paper-2: hsl(210, 65, 92);
 $ink: darken($cover, 40);
 $link: $ink;
 $header: $ink;
